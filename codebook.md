@@ -9,6 +9,18 @@ To create, run `runAnalysis.R`, ensuring the following packages are installed:
  - `dplyr`
  - `crayon`
 
+### Processing Code Overview
+
+The code itself is well documented, but at a high level, the processing following these steps:
+
+1. Read in Origin Data
+2. Add verbosity to the feature names of the original data, such that a layman can ..almost figure out what they mean
+3. Join the test and train data, along with feature names and activity labels, such that one cohesive dataset is produced
+4. Use GREP to find columns that are mean and std measurements
+5. Group the data by subject and activity, and take the average of all corresponding measurements
+6. Dump into output.txt
+
+### Output Data
 The outputted file contains 82 variables, listed in full in the appendix.
 
 The important fields are defined below:
