@@ -36,84 +36,168 @@ so, `average time-based_body_acceleration AVERAGE()-Y for activity/subject pair`
 
 ### Appendix
 subject_number
+
 activity_name
+
 activity_number
+
 average time-based_body_acceleration AVERAGE()-X for activity/subject pair
+
 average time-based_body_acceleration AVERAGE()-Y for activity/subject pair
+
 average time-based_body_acceleration AVERAGE()-Z for activity/subject pair
+
 average time-based_gravity_acceleration AVERAGE()-X for activity/subject pair
+
 average time-based_gravity_acceleration AVERAGE()-Y for activity/subject pair
+
 average time-based_gravity_acceleration AVERAGE()-Z for activity/subject pair
+
 average derived_jerk_body_acceleration-AVERAGE()-X for activity/subject pair
+
 average derived_jerk_body_acceleration-AVERAGE()-Y for activity/subject pair
+
 average derived_jerk_body_acceleration-AVERAGE()-Z for activity/subject pair
+
 average time-based_body_gyroscope-AVERAGE()-X for activity/subject pair
+
 average time-based_body_gyroscope-AVERAGE()-Y for activity/subject pair
+
 average time-based_body_gyroscope-AVERAGE()-Z for activity/subject pair
+
 average time-based_body_gyroscopeJerk-AVERAGE()-X for activity/subject pair
+
 average time-based_body_gyroscopeJerk-AVERAGE()-Y for activity/subject pair
+
 average time-based_body_gyroscopeJerk-AVERAGE()-Z for activity/subject pair
+
 average derived_body_acceleration_magnitude-AVERAGE() for activity/subject pair
+
 average derived_gravity_acceleration_magnitude-AVERAGE() for activity/subject pair
+
 average derived_jerk_body_accelerationMag-AVERAGE() for activity/subject pair
+
 average time-based_body_gyroscopeMag-AVERAGE() for activity/subject pair
+
 average time-based_body_gyroscopeJerkMag-AVERAGE() for activity/subject pair
+
 average frequency-based_body_acceleration-AVERAGE()-X for activity/subject pair
+
 average frequency-based_body_acceleration-AVERAGE()-Y for activity/subject pair
+
 average frequency-based_body_acceleration-AVERAGE()-Z for activity/subject pair
+
 average frequency-based_body_acceleration-AVERAGEFreq()-X for activity/subject pair
+
 average frequency-based_body_acceleration-AVERAGEFreq()-Y for activity/subject pair
+
 average frequency-based_body_acceleration-AVERAGEFreq()-Z for activity/subject pair
+
 average frequency-based_body_accelerationJerk-AVERAGE()-X for activity/subject pair
+
 average frequency-based_body_accelerationJerk-AVERAGE()-Y for activity/subject pair
+
 average frequency-based_body_accelerationJerk-AVERAGE()-Z for activity/subject pair
+
 average frequency-based_body_accelerationJerk-AVERAGEFreq()-X for activity/subject pair
+
 average frequency-based_body_accelerationJerk-AVERAGEFreq()-Y for activity/subject pair
+
 average frequency-based_body_accelerationJerk-AVERAGEFreq()-Z for activity/subject pair
+
 average frequency-based_gyroscope-AVERAGE()-X for activity/subject pair
+
 average frequency-based_gyroscope-AVERAGE()-Y for activity/subject pair
+
 average frequency-based_gyroscope-AVERAGE()-Z for activity/subject pair
+
 average frequency-based_gyroscope-AVERAGEFreq()-X for activity/subject pair
+
 average frequency-based_gyroscope-AVERAGEFreq()-Y for activity/subject pair
+
 average frequency-based_gyroscope-AVERAGEFreq()-Z for activity/subject pair
+
 average frequency-based_body_accelerationMag-AVERAGE() for activity/subject pair
+
 average frequency-based_body_accelerationMag-AVERAGEFreq() for activity/subject pair
+
 average fBodyBodyAccJerkMag-AVERAGE() for activity/subject pair
+
 average fBodyBodyAccJerkMag-AVERAGEFreq() for activity/subject pair
+
 average fBodyBodyGyroMag-AVERAGE() for activity/subject pair
+
 average fBodyBodyGyroMag-AVERAGEFreq() for activity/subject pair
+
 average fBodyBodyGyroJerkMag-AVERAGE() for activity/subject pair
+
 average fBodyBodyGyroJerkMag-AVERAGEFreq() for activity/subject pair
+
 average time-based_body_acceleration STANDARD_DEV()-X for activity/subject pair
+
 average time-based_body_acceleration STANDARD_DEV()-Y for activity/subject pair
+
 average time-based_body_acceleration STANDARD_DEV()-Z for activity/subject pair
+
 average time-based_gravity_acceleration STANDARD_DEV()-X for activity/subject pair
+
 average time-based_gravity_acceleration STANDARD_DEV()-Y for activity/subject pair
+
 average time-based_gravity_acceleration STANDARD_DEV()-Z for activity/subject pair
+
 average derived_jerk_body_acceleration-STANDARD_DEV()-X for activity/subject pair
+
 average derived_jerk_body_acceleration-STANDARD_DEV()-Y for activity/subject pair
+
 average derived_jerk_body_acceleration-STANDARD_DEV()-Z for activity/subject pair
+
 average time-based_body_gyroscope-STANDARD_DEV()-X for activity/subject pair
+
 average time-based_body_gyroscope-STANDARD_DEV()-Y for activity/subject pair
+
 average time-based_body_gyroscope-STANDARD_DEV()-Z for activity/subject pair
+
 average time-based_body_gyroscopeJerk-STANDARD_DEV()-X for activity/subject pair
+
 average time-based_body_gyroscopeJerk-STANDARD_DEV()-Y for activity/subject pair
+
 average time-based_body_gyroscopeJerk-STANDARD_DEV()-Z for activity/subject pair
+
 average derived_body_acceleration_magnitude-STANDARD_DEV() for activity/subject pair
+
 average derived_gravity_acceleration_magnitude-STANDARD_DEV() for activity/subject pair
+
 average derived_jerk_body_accelerationMag-STANDARD_DEV() for activity/subject pair
+
 average time-based_body_gyroscopeMag-STANDARD_DEV() for activity/subject pair
+
 average time-based_body_gyroscopeJerkMag-STANDARD_DEV() for activity/subject pair
+
 average frequency-based_body_acceleration-STANDARD_DEV()-X for activity/subject pair
+
 average frequency-based_body_acceleration-STANDARD_DEV()-Y for activity/subject pair
+
 average frequency-based_body_acceleration-STANDARD_DEV()-Z for activity/subject pair
+
 average frequency-based_body_accelerationJerk-STANDARD_DEV()-X for activity/subject pair
+
 average frequency-based_body_accelerationJerk-STANDARD_DEV()-Y for activity/subject pair
+
 average frequency-based_body_accelerationJerk-STANDARD_DEV()-Z for activity/subject pair
+
 average frequency-based_gyroscope-STANDARD_DEV()-X for activity/subject pair
+
 average frequency-based_gyroscope-STANDARD_DEV()-Y for activity/subject pair
+
 average frequency-based_gyroscope-STANDARD_DEV()-Z for activity/subject pair
+
 average frequency-based_body_accelerationMag-STANDARD_DEV() for activity/subject pair
+
 average fBodyBodyAccJerkMag-STANDARD_DEV() for activity/subject pair
+
 average fBodyBodyGyroMag-STANDARD_DEV() for activity/subject pair
+
 average fBodyBodyGyroJerkMag-STANDARD_DEV() for activity/subject pair
+
+
+
