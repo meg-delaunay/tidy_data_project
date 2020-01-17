@@ -1,4 +1,6 @@
 library('dplyr')
+# install.packages('crayon')
+library('crayon')
 
 ################################################################################################
 ####### 1. Merges the training and the test sets to create one data set. ######################
@@ -15,6 +17,21 @@ train_sub <- read.table('UCI HAR Dataset/train/subject_train.txt', col.names=c('
 activity_labels <- read.table('UCI HAR Dataset/activity_labels.txt')
 feature_labels <- read.table('UCI HAR Dataset/features.txt')
 
+# Step Zero, let's clean up the names of the features so that they're more understandable.
+feature_labels_clean <- feature_labels$V2
+feature_labels_clean <- gsub('tBodyAcc-', 'time-based_body_acceleration ', feature_labels_clean)
+feature_labels_clean <- gsub('tGravityAcc-', 'time-based_gravity_acceleration ', feature_labels_clean)
+feature_labels_clean <- gsub('tBodyGyro', 'time-based_body_gyroscope', feature_labels_clean)
+feature_labels_clean <- gsub('fBodyAcc', 'frequency-based_body_acceleration', feature_labels_clean)
+feature_labels_clean <- gsub('fBodyGyro', 'frequency-based_gyroscope', feature_labels_clean)
+feature_labels_clean <- gsub('tBodyAccJerk', 'derived_jerk_body_acceleration', feature_labels_clean)
+feature_labels_clean <- gsub('tBodyAccMag', 'derived_body_acceleration_magnitude', feature_labels_clean)
+feature_labels_clean <- gsub('tGravityAccMag', 'derived_gravity_acceleration_magnitude', feature_labels_clean)
+feature_labels_clean <- gsub('tBodyAccJerkMag', 'derived_body_jerk_acceleration_magnitude', feature_labels_clean)
+
+feature_labels_clean <- gsub('mean()', 'AVERAGE', feature_labels_clean)
+feature_labels_clean <- gsub('std()', 'STANDARD_DEV', feature_labels_clean)
+
 # First, going to transform test_y and train_y to correspond with their activity.
 
 test_y_with_labels = inner_join(test_y, activity_labels)
@@ -24,8 +41,8 @@ train_y_with_labels = inner_join(train_y, activity_labels)
 colnames(train_y_with_labels) = c('activity_number', 'activity_name')
 
 # Next, going to add correct column names to train_x and test_x
-names(test_x) = c(as.character(feature_labels$V2))
-names(train_x) = c(as.character(feature_labels$V2))
+names(test_x) = c(as.character(feature_labels_clean))
+names(train_x) = c(as.character(feature_labels_clean))
 
 all_test_data <- bind_cols(test_sub, test_y_with_labels, test_x)
 all_train_data <- bind_cols(train_sub, train_y_with_labels, train_x)
@@ -35,9 +52,9 @@ all_data <- bind_rows(all_test_data, all_train_data)
 ########################################################################################################
 ###### 2. Extracts only the measurements on the mean and standard deviation for each measurement. ######
 
-# First, find columns that are mean and std. 
-col_numbers_for_mean <- grep('mean', feature_labels$V2)
-col_numbers_for_std <- grep('std', feature_labels$V2)
+# First, find columns that are mean and std. (using names given earlier)
+col_numbers_for_mean <- grep('AVERAGE', feature_labels_clean)
+col_numbers_for_std <- grep('STANDARD_DEV', feature_labels_clean)
 
 # Why am I doing this? Great. Earlier I got the indices within the feature list for means and stds.
 # In my all_data table, all of these indices are actually increased by 3, since there are three
@@ -60,11 +77,19 @@ means_and_stds <- select(all_data, positions)
 ###### 5. From the data set in step 4, creates a second, independent tidy data set with the average of 
 ###### each variable for each activity and each subject. ###############################################
 
-grouped_data <- means_and_stds %>% group_by(subject_number, activity_number)
+grouped_data <- means_and_stds %>% group_by(subject_number, activity_name)
 averaged_for_each_group <- summarise_all(grouped_data, mean)
 
+new_name_list <- list()
+for(name in names(averaged_for_each_group)) {
+  if(name == 'subject_number' || name == 'activity_name' || name == 'activity_number') {
+    new_name_list <- append(new_name_list, name)
+  } else {
+    newname <- 'average ' %+% name %+% ' for activity/subject pair'
+    new_name_list <- append(new_name_list, newname)
+  }
+}
 
-# need to join back in the activity labels since they get NAed when calculating mean. 
-averaged_for_each_group <- inner_join(averaged_for_each_group, activity_labels, by=c('activity_name' ='V1'))
+names(averaged_for_each_group) <- new_name_list
 
-
+output <- write.table(averaged_for_each_group, 'output.txt', row.name=FALSE)
